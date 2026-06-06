@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Telegram Multi-Account Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">📱 Telegram Manager</div>
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="/accounts"><i class="fas fa-user"></i> Accounts</a></li>
+                <li><a href="/groups"><i class="fas fa-layer-group"></i> Groups</a></li>
+                <li><a href="/sender"><i class="fas fa-paper-plane"></i> Send Message</a></li>
+                <li><a href="/repeater"><i class="fas fa-repeat"></i> Repeater</a></li>
+                <li><a href="/logs"><i class="fas fa-list"></i> Logs</a></li>
+                <li><a href="/settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
